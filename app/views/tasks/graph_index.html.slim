@@ -1,0 +1,21 @@
+- @tasks.each do |task|
+  = task.title
+  br
+
+javascript:
+  $(function () {
+    const query = {query: '{testField}'};
+
+    $.ajax({
+      url: '/graphql',
+      type: 'POST',
+      dataType: 'json',
+      data: query
+    })
+      .done(function (result) {
+        console.log(result);
+      })
+      .fail(function (result) {
+        console.log(result);
+      })
+  });

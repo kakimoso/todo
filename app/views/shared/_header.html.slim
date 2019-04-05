@@ -1,5 +1,11 @@
 .header
-  h2.pull-left TODO
+  h2.pull-left
+    | TODO　
+    - if controller.action_name == 'index'
+      = link_to '-> graph', graph_tasks_path
+    - elsif controller.action_name == 'graph_index'
+      = link_to '-> normal', tasks_path
+
   .pull-right
   - unless user_signed_in?
     = link_to 'ログイン', new_user_session_path

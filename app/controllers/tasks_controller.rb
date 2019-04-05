@@ -7,6 +7,10 @@ class TasksController < ApplicationController
     @tasks = @q.result
   end
 
+  def graph_index
+    @tasks = current_user.tasks.all
+  end
+
   def show
   end
 
