@@ -16,9 +16,9 @@ table
   thead
     tr
       th Title
-      th Deadline
-      th Status
-      th Priority
+      th = sort_link @q, :deadline
+      th = sort_link @q, :status
+      th = sort_link @q, :priority
       th
       th
       th
