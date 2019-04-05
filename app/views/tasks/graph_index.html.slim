@@ -1,10 +1,8 @@
-- @tasks.each do |task|
-  = task.title
-  br
+#tasks
 
 javascript:
   $(function () {
-    const query = {query: '{testField}'};
+    const query = {query: '{allTasks {id title}}'};
 
     $.ajax({
       url: '/graphql',
@@ -13,7 +11,9 @@ javascript:
       data: query
     })
       .done(function (result) {
-        console.log(result);
+        result.data.allTasks.forEach(function (task) {
+          $('#tasks').append(`<a>${task.id}: ${task.title}</a><br>`)
+        });
       })
       .fail(function (result) {
         console.log(result);

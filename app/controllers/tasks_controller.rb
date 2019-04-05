@@ -8,7 +8,6 @@ class TasksController < ApplicationController
   end
 
   def graph_index
-    @tasks = current_user.tasks.all
   end
 
   def show
