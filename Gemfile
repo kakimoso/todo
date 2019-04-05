@@ -24,6 +24,10 @@ gem 'ransack'
 # データ投入
 gem 'seed-fu'
 
+# graphql
+gem 'graphql', '1.7.7'
+gem 'graphiql-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
