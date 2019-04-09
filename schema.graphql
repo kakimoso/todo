@@ -1,0 +1,19 @@
+type Mutation {
+  # An example field added by the generator
+  testField: String
+}
+
+type Query {
+  # get current_user's tasks
+  allTasks: [Task]
+
+  # get task by id
+  findTaskBy(id: Int, title: String): [Task]
+}
+
+type Task {
+  id: Int!
+  priority: Int!
+  status: Int!
+  title: String!
+}
