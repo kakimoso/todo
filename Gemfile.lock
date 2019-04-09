@@ -49,10 +49,10 @@ GEM
       rake (>= 10.4, < 13.0)
     arel (9.0.0)
     bcrypt (3.1.12)
-    bindex (0.6.0)
+    bindex (0.7.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.4.2)
+    bootsnap (1.4.3)
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
@@ -93,6 +93,10 @@ GEM
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
+    graphql (1.7.7)
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -278,6 +282,8 @@ DEPENDENCIES
   coffee-rails
   devise
   factory_bot_rails
+  graphiql-rails
+  graphql (= 1.7.7)
   html2slim
   jbuilder (~> 2.5)
   kaminari
