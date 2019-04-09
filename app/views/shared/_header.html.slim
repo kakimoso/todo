@@ -1,18 +1,23 @@
 .header
-  h2.pull-left
-    | TODO　
-    - if controller.action_name == 'index'
-      = link_to '-> graph', graph_tasks_path
-    - elsif controller.action_name == 'graph_index'
-      = link_to '-> normal', tasks_path
+  .header-content
+    h2.pull-left
+      | TODO　
+      - if controller.action_name == 'index'
+        = link_to '-> graph', graph_tasks_path
+      - elsif controller.action_name == 'graph_index'
+        = link_to '-> normal', tasks_path
+        = " "
+        = link_to '->graphiql', graphiql_rails_path, target: '_blank'
 
-  .pull-right
-  - unless user_signed_in?
-    = link_to 'ログイン', new_user_session_path
-    a = ' '
-    = link_to '新規登録', new_user_registration_path
-  - else
-    a ログイン中
-    a = ' '
-    = link_to 'ログアウト', destroy_user_session_path, method: :delete
-hr
+    .pull-right
+      - unless user_signed_in?
+        div
+          = link_to 'ログイン', new_user_session_path
+          a = ' '
+          = link_to '新規登録', new_user_registration_path
+      - else
+        div
+          a ログイン中
+          a = ' '
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+  hr

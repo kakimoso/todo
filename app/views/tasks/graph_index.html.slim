@@ -1,3 +1,8 @@
+label search by task title
+input#task-search type="text"
+
+hr
+
 #tasks
 
 javascript:
@@ -19,3 +24,24 @@ javascript:
         console.log(result);
       })
   });
+
+  $('#task-search').on('change', function (e) {
+    const query = {query: `{findTaskBy(title: "${e.target.value}") {id title}}`};
+    $('#tasks').empty();
+
+    $.ajax({
+      url: '/graphql',
+      type: 'POST',
+      dataType: 'json',
+      data: query
+    })
+      .done(function (result) {
+        result.data.findTaskBy.forEach(function (task) {
+          $('#tasks').append(`<a>${task.id}: ${task.title}</a><br>`)
+        });
+      })
+      .fail(function (result) {
+        console.log(result);
+      })
+  });
+
