@@ -4,7 +4,7 @@ import VueApollo from "vue-apollo";
 import { gql } from "apollo-boost";
 
 const client = new ApolloClient({
-  uri: "http://localhost:3008/graphql",
+  uri: "http://localhost:3009/graphql",
   request: async operation => {
     operation.setContext({
       headers: {
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     data: {
       tasks: [],
+      message: 'hello'
     },
     methods: {
       search: function (e) {
